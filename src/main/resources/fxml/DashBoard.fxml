@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.*?>
+
+<AnchorPane prefHeight="641.0" prefWidth="1027.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mobi.huanyuan.spider.ui.controller.DashBoardController">
+    <BorderPane prefHeight="640.0" prefWidth="1026.0">
+        <top>
+            <MenuBar prefHeight="25.0" prefWidth="1027.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Menu text="文件">
+                    <MenuItem fx:id="setting" text="配置" />
+                    <MenuItem fx:id="exit" text="退出" />
+                </Menu>
+                <Menu text="关于">
+                    <MenuItem fx:id="about" text="关于" />
+                </Menu>
+            </MenuBar>
+        </top>
+        <left>
+            <TreeView fx:id="treeView" onMouseClicked="#treeViewClick" prefHeight="590.0" prefWidth="226.0" BorderPane.alignment="TOP_LEFT" />
+        </left>
+        <center>
+            <Pane prefHeight="590.0" prefWidth="899.0" BorderPane.alignment="CENTER">
+                <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="490.0" prefWidth="350.0">
+                    <VBox alignment="TOP_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="599" prefWidth="449">
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="网址">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="关键字">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="爬取深度">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="爬取网址进程数">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="分析数据进程数">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="存储数据进程数">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="存储类型">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" maxWidth="200.0" prefHeight="40.0" text="本地地址">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </Label>
+                    </VBox>
+                    <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="599" prefWidth="449">
+                        <TextField fx:id="url" maxWidth="200" prefHeight="40.0" promptText="网址">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="keys" maxWidth="200" prefHeight="40.0" promptText="关键字">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="maxDepth" maxWidth="200" prefHeight="40.0" promptText="2">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="htmlThreadNum" maxWidth="200" prefHeight="40.0" promptText="2">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="parseThreadNum" maxWidth="200" prefHeight="40.0" promptText="2">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="storeThreadNum" maxWidth="200" prefHeight="40.0" promptText="2">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <ComboBox fx:id="storeType" maxWidth="200.0" prefHeight="40.0" promptText="--存储类型--">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </ComboBox>
+                        <TextField fx:id="localPath" maxWidth="200" prefHeight="40.0" promptText="数据存储地址">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                    </VBox>
+                </HBox>
+                <HBox alignment="CENTER" layoutY="480.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="350.0">
+                    <Button fx:id="startBtn" onAction="#start" text="开始">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
+                        </HBox.margin>
+                    </Button>
+                    <Button fx:id="stopBtn" onAction="#stop" text="结束">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                        <HBox.margin>
+                            <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+            </Pane>
+        </center>
+        <bottom>
+            <StatusBar fx:id="statusBar" />
+        </bottom>
+    </BorderPane>
+</AnchorPane>
