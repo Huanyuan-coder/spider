@@ -1,8 +1,8 @@
 package mobi.huanyuan.spider.runable;
 
-import mobi.huanyuan.spider.SpiderApplication;
-import mobi.huanyuan.spider.SpiderQueue;
+import mobi.huanyuan.spider.Spider;
 import mobi.huanyuan.spider.SpiderHtml;
+import mobi.huanyuan.spider.SpiderQueue;
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 解析页面任务.
@@ -27,22 +26,18 @@ public class SpiderParseHtmlRunnable extends SpiderTask {
 
     private SpiderHtmlConfig config;
 
-    public SpiderParseHtmlRunnable(String taskName){
+    public SpiderParseHtmlRunnable(String taskName) {
         super(taskName);
     }
-    public SpiderParseHtmlRunnable(String taskName,SpiderHtmlConfig config) {
+
+    public SpiderParseHtmlRunnable(String taskName, SpiderHtmlConfig config) {
         super(taskName);
         this.config = config;
     }
 
     @Override
     public void exe() {
-        while (!SpiderApplication.isStopping) {
-//            try {
-//                TimeUnit.MILLISECONDS.sleep(100);
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
+        while (!Spider.isStopping) {
             parse();
         }
     }

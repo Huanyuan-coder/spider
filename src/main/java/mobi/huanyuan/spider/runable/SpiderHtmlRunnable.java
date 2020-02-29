@@ -1,6 +1,6 @@
 package mobi.huanyuan.spider.runable;
 
-import mobi.huanyuan.spider.SpiderApplication;
+import mobi.huanyuan.spider.Spider;
 import mobi.huanyuan.spider.SpiderHtml;
 import mobi.huanyuan.spider.SpiderQueue;
 import mobi.huanyuan.spider.bean.SpiderRecord;
@@ -35,7 +35,7 @@ public class SpiderHtmlRunnable extends SpiderTask {
 
     @Override
     public void exe() {
-        while (!SpiderApplication.isStopping) {
+        while (!Spider.isStopping) {
             try {
                 TimeUnit.MILLISECONDS.sleep(200);
             } catch (Exception e) {

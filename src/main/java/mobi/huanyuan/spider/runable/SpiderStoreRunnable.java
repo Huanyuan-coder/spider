@@ -1,13 +1,11 @@
 package mobi.huanyuan.spider.runable;
 
-import mobi.huanyuan.spider.SpiderApplication;
+import mobi.huanyuan.spider.Spider;
 import mobi.huanyuan.spider.SpiderQueue;
 import mobi.huanyuan.spider.bean.SpiderRecord;
 import mobi.huanyuan.spider.runable.store.DataStoreFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * 数据存储任务.
@@ -31,17 +29,12 @@ public class SpiderStoreRunnable extends SpiderTask {
 
     @Override
     public void exe() {
-        while (!SpiderApplication.isStopping) {
+        while (!Spider.isStopping) {
             store();
         }
     }
 
     private synchronized void store() {
-//        try {
-//            TimeUnit.MILLISECONDS.sleep(100);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
         SpiderRecord record = SpiderQueue.storePoll();
         if (null != record) {
             DataStoreFactory.store(config, record);
